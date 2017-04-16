@@ -1,0 +1,40 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-6b27a7a9:15b595be293:-7fdc</id>
+  <name>toptour_sane</name>
+  <nativeName>toptour_sane</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-6b27a7a9:15b595be293:-7fe3</id>
+  </namespace>
+  <title>toptour_sane</title>
+  <keywords>
+    <string>features</string>
+    <string>toptour_sane</string>
+  </keywords>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>5.44792699787649</minx>
+    <maxx>30.2836131538665</maxx>
+    <miny>58.1348675428335</miny>
+    <maxy>70.5082584679777</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>5.44792699787649</minx>
+    <maxx>30.2836131538665</maxx>
+    <miny>58.1348675428335</miny>
+    <maxy>70.5082584679777</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <metadata>
+    <entry key="cachingEnabled">false</entry>
+  </metadata>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-6b27a7a9:15b595be293:-7fdd</id>
+  </store>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

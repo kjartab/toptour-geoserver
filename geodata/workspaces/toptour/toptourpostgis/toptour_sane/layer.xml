@@ -1,0 +1,15 @@
+<layer>
+  <name>toptour_sane</name>
+  <id>LayerInfoImpl-6b27a7a9:15b595be293:-7fdb</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-6b27a7a9:15b595be293:-7fff</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-6b27a7a9:15b595be293:-7fdc</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

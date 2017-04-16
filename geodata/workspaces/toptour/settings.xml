@@ -1,0 +1,23 @@
+<settings>
+  <id>SettingsInfoImpl-6b27a7a9:15b595be293:-7fe2</id>
+  <workspace>
+    <id>WorkspaceInfoImpl-6b27a7a9:15b595be293:-7fe4</id>
+    <name>toptour</name>
+  </workspace>
+  <contact>
+    <id>contact</id>
+  </contact>
+  <charset>UTF-8</charset>
+  <numDecimals>4</numDecimals>
+  <verbose>true</verbose>
+  <verboseExceptions>false</verboseExceptions>
+  <metadata>
+    <map>
+      <entry>
+        <string>quietOnNotFound</string>
+        <boolean>false</boolean>
+      </entry>
+    </map>
+  </metadata>
+  <localWorkspaceIncludesPrefix>false</localWorkspaceIncludesPrefix>
+</settings>
