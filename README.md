@@ -27,6 +27,7 @@ docker run -it "test/test" /bin/sh
 docker build -t "toptour/geo" ./
 
 docker run -d  -p 8080:8080  -v /vagrant/toptourcollection/toptour-geoserver/geodata:/geoserver_data "toptour/geo"
+
 docker run -d  -p 8080:8080  -v /vagrant:/webapp "toptour/geo"
 
 docker exec -it 5e3c9cfe2a95 /bin/sh
@@ -72,3 +73,13 @@ Pixels at zoom 7:
 
 
 http://localhost:8282/geoserver/toptour/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&STYLES&LAYERS=toptour%3Aturer&SRS=EPSG%3A404000&WIDTH=769&HEIGHT=472&BBOX=-17.947265625000007%2C40.8076171875%2C49.58789062500001%2C82.2392578125
+
+
+
+
+------
+Need 
+
+insert into utno.eturer
+select id, attribs->'navn'::text, attribs->'beskrivelse'::text, geom from utno.turer 
+  WHERE (turer.attribs -> 'tags'::text) ? 'Skitur'::text AND st_length(turer.geom::geography, true) < 40000::double precision

@@ -1,3 +1,15 @@
----
-- hosts: ovre2
+--- 
+- name: toptour geoserver
+  hosts: "trd"
   
+  become: yes
+  vars: 
+    nginx_app_config_template: "toptour_geoserver_config.j2"
+    nginx_app_domain_name: "maps.trd.toptour.no"
+    nginx_app_webroot: /var/www/{{nginx_app_domain_name}}
+    letsencrypt_email: kjartanbjorset@gmail.com 
+
+  pre_tasks: 
+    - apt: update_cache=yes
+  roles:
+    - role: kjartab.nginx-certbot-app
