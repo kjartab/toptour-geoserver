@@ -1,39 +1,35 @@
 FROM tomcat:8.0.42-jre8-alpine
 
-ENV GEOSERVER_DATA_DIR=/geoserver_data
-# RUN mkdir $GEOSERVER_DATA_DIR
+ENV GEOSERVER_DATA_DIR /var/local/geoserver
+ENV GEOSERVER_INSTALL_DIR /usr/local/geoserver
 
-RUN ls /
-
-RUN ls /geoserver_data
+RUN mkdir $GEOSERVER_DATA_DIR
+RUN mkdir $GEOSERVER_INSTALL_DIR
 
 ENV GEOSERVER_PLUGIN vectortiles
 ENV GEOSERVER_VERSION 2.11.0
 
 RUN apk add --update openssl unzip 
 
-WORKDIR $CATALINA_HOME
 
-# Download and install geoserver
-RUN wget http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-war.zip -O /tmp/geoserver.zip
+#ADD conf/geoserverweb.xml /usr/local/tomcat/webapps/geoserver/WEB-INF/web.xml
+ADD conf/geoserverweb.xml /usr/local/tomcat/conf/Catalina/localhost/geoserver.xml
 
-RUN unzip -q /tmp/geoserver.zip -d /tmp \
- 	&& unzip -q /tmp/geoserver.war -d $CATALINA_HOME/webapps/geoserver \
-	&& rm -rf $CATALINA_HOME/webapps/geoserver/data \
-    && rm /tmp/geoserver.war \
-	&& rm /tmp/geoserver.zip
+RUN cd ${GEOSERVER_INSTALL_DIR} \
+    && wget http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-war.zip \
+    && unzip geoserver-${GEOSERVER_VERSION}-war.zip \
+    && unzip geoserver.war \
+    && rm -rf geoserver-${GEOSERVER_VERSION}-war.zip geoserver.war target *.txt
+
+#ADD conf/geweb.xml ${GEOSERVER_INSTALL_DIR}/WEB-INF/web.xml
+
 
 # Download and install geoserver vector tiles plugin
 RUN wget https://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/extensions/geoserver-${GEOSERVER_VERSION}-${GEOSERVER_PLUGIN}-plugin.zip -O /tmp/${GEOSERVER_PLUGIN}-plugin.zip
 
-RUN unzip -q /tmp/${GEOSERVER_PLUGIN}-plugin.zip -d $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/ \
-	&& rm /tmp/${GEOSERVER_PLUGIN}-plugin.zip
+RUN unzip -q /tmp/${GEOSERVER_PLUGIN}-plugin.zip -d ${GEOSERVER_INSTALL_DIR}/WEB-INF/lib/ \
+    && rm /tmp/${GEOSERVER_PLUGIN}-plugin.zip
 
-COPY conf/web.xml /usr/local/tomcat/conf/web.xml
 
-RUN ls /usr/local/tomcat/conf
-
-RUN ls /usr/local/tomcat
-
-#RUN mkdir $GEOSERVER_DATA_DIR/workspaces
-#COPY backup/geoserver_data/workspaces/toptour $GEOSERVER_DATA_DIR/workspaces/toptour
+# Tomcat environment
+ENV CATALINA_OPTS "-server -DGEOSERVER_DATA_DIR=${GEOSERVER_DATA_DIR}"
