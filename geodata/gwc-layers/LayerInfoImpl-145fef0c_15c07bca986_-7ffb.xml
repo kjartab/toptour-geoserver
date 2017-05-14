@@ -1,36 +1,20 @@
 <GeoServerTileLayer>
-  <id>LayerInfoImpl-6b27a7a9:15b595be293:-7fdb</id>
+  <id>LayerInfoImpl-145fef0c:15c07bca986:-7ffb</id>
   <enabled>true</enabled>
   <inMemoryCached>true</inMemoryCached>
-  <name>toptour:toptour_sane</name>
+  <name>toptour:sane_turer7</name>
   <mimeFormats>
-    <string>application/json;type=utfgrid</string>
     <string>image/png</string>
     <string>image/jpeg</string>
+    <string>image/gif</string>
     <string>application/x-protobuf;type=mapbox-vector</string>
   </mimeFormats>
   <gridSubsets>
     <gridSubset>
       <gridSetName>EPSG:900913</gridSetName>
-      <extent>
-        <coords>
-          <double>-2.003750834E7</double>
-          <double>-2.003750834E7</double>
-          <double>2.003750834E7</double>
-          <double>2.003750834E7</double>
-        </coords>
-      </extent>
     </gridSubset>
     <gridSubset>
       <gridSetName>EPSG:4326</gridSetName>
-      <extent>
-        <coords>
-          <double>-180.0</double>
-          <double>-90.0</double>
-          <double>180.0</double>
-          <double>90.0</double>
-        </coords>
-      </extent>
     </gridSubset>
   </gridSubsets>
   <metaWidthHeight>

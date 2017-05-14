@@ -4,7 +4,7 @@
   
   become: yes
   vars: 
-    nginx_app_config_template: "toptour_geoserver_config.j2"
+    nginx_app_config_template: "toptour_api_config.j2"
     nginx_app_domain_name: "maps.trd.toptour.no"
     nginx_app_webroot: /var/www/{{nginx_app_domain_name}}
     letsencrypt_email: kjartanbjorset@gmail.com 

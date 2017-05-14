@@ -1,27 +1,27 @@
 <featureType>
-  <id>FeatureTypeInfoImpl-6b27a7a9:15b595be293:-7fdc</id>
-  <name>toptour_sane</name>
-  <nativeName>toptour_sane</nativeName>
+  <id>FeatureTypeInfoImpl-145fef0c:15c07bca986:-7ffc</id>
+  <name>sane_turer7</name>
+  <nativeName>eturer</nativeName>
   <namespace>
     <id>NamespaceInfoImpl-6b27a7a9:15b595be293:-7fe3</id>
   </namespace>
-  <title>toptour_sane</title>
+  <title>eturer</title>
   <keywords>
     <string>features</string>
-    <string>toptour_sane</string>
+    <string>eturer</string>
   </keywords>
   <srs>EPSG:4326</srs>
   <nativeBoundingBox>
-    <minx>5.44792699787649</minx>
-    <maxx>30.2836131538665</maxx>
-    <miny>58.1348675428335</miny>
-    <maxy>70.5082584679777</maxy>
+    <minx>5.36725759506226</minx>
+    <maxx>21.6624240875244</maxx>
+    <miny>58.0767097473145</miny>
+    <maxy>69.8237686157227</maxy>
   </nativeBoundingBox>
   <latLonBoundingBox>
-    <minx>5.44792699787649</minx>
-    <maxx>30.2836131538665</maxx>
-    <miny>58.1348675428335</miny>
-    <maxy>70.5082584679777</maxy>
+    <minx>5.36725759506226</minx>
+    <maxx>21.6624240875244</maxx>
+    <miny>58.0767097473145</miny>
+    <maxy>69.8237686157227</maxy>
     <crs>EPSG:4326</crs>
   </latLonBoundingBox>
   <projectionPolicy>FORCE_DECLARED</projectionPolicy>

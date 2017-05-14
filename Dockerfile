@@ -3,6 +3,10 @@ FROM tomcat:8.0.42-jre8-alpine
 ENV GEOSERVER_DATA_DIR=/geoserver_data
 # RUN mkdir $GEOSERVER_DATA_DIR
 
+RUN ls /
+
+RUN ls /geoserver_data
+
 ENV GEOSERVER_PLUGIN vectortiles
 ENV GEOSERVER_VERSION 2.11.0
 
@@ -26,6 +30,10 @@ RUN unzip -q /tmp/${GEOSERVER_PLUGIN}-plugin.zip -d $CATALINA_HOME/webapps/geose
 	&& rm /tmp/${GEOSERVER_PLUGIN}-plugin.zip
 
 COPY conf/web.xml /usr/local/tomcat/conf/web.xml
+
+RUN ls /usr/local/tomcat/conf
+
+RUN ls /usr/local/tomcat
 
 #RUN mkdir $GEOSERVER_DATA_DIR/workspaces
 #COPY backup/geoserver_data/workspaces/toptour $GEOSERVER_DATA_DIR/workspaces/toptour
